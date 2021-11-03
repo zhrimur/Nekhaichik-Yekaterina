@@ -10,13 +10,13 @@
     <script>
         function incrementFunc(array)
         {
-            let array2 =[];
+            /*let array2 =[];
             for(i=0;i<array.length;i++)
             {
                 array2[i]=array[i]+1;
-            }
-            array2String=String(array2);
-            alert(array2String);
+            }*/
+            let array2 = array.map(item => item+1);
+            return array2;
         }
         let array3 =[];
         let razmerMassiva = Number(prompt("Vvedite razmer massiva"));
@@ -24,7 +24,7 @@
         {
             array3[i]=Number(prompt("Vvedite element massiva"));
         }
-        incrementFunc(array3);
+        alert(incrementFunc(array3));
     </script>
 </body>
 </html>
