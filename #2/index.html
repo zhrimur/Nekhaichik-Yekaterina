@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function incrementFunc(array)
+        {
+            let array2 =[];
+            for(i=0;i<array.length;i++)
+            {
+                array2[i]=array[i]+1;
+            }
+            array2String=String(array2);
+            alert(array2String);
+        }
+        let array3 =[];
+        let razmerMassiva = Number(prompt("Vvedite razmer massiva")-1);
+        for (i=0; i<razmerMassiva; i++)
+        {
+            array3[i]=Number(prompt("Vvedite element massiva"));
+        }
+        incrementFunc(array3);
+    </script>
+</body>
+</html>
