@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function incrementFunc(array) {
-            let array2 = array.map(item => item + 1);
-            return array2;
-        }
-        let array3 = [];
-        let razmerMassiva = Number(prompt("Vvedite razmer massiva"));
-        for (i = 0; i < razmerMassiva; i++) {
-            array3[i] = Number(prompt("Vvedite element massiva"));
-        }
-        alert(incrementFunc(array3));
+      function incrementFunc(array) {
+        let array2 = array.map((item) => item + 1);
+        return array2;
+      }
+      let array3 = [];
+      let razmerMassiva = Number(prompt("Vvedite razmer massiva"));
+      for (i = 0; i < razmerMassiva; i++) {
+        array3[i] = Number(prompt("Vvedite element massiva"));
+      }
+      alert(incrementFunc(array3));
     </script>
-</body>
-
+  </body>
 </html>
