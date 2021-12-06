@@ -1,37 +1,30 @@
-let body = document.getElementsByTagName("body");
-let aside = document.createElement("aside");
+let header = document.createElement("header");
+header.className = "header";
+document.body.append(header);
+
 let nav = document.createElement("nav");
-let ul = document.createElement("ul");
-let element;
-const asideArray = [
-  { name: "Google", href: "http://google.com" },
-  { name: "Amazon", href: "http://amazon.com" },
-  { name: "Yandex", href: "http://yandex.com" },
-  { name: "Vk", href: "https://vk.com" },
-  { name: "Facebook", href: "https://facebook.com" },
-  { name: "Youtube", href: "https://youtube.com" },
-  { name: "Bing", href: "https://bing.com" },
-  { name: "Yahoo", href: "https://yahoo.com" },
+nav.className = "header_block";
+nav.innerHTML = "COMPANY  LOGO";
+
+let arr = ["Google", "Amazon", "eBay", "Onliner"];
+
+let arrHref = [
+  "http://google.com",
+  "http://amazon.com",
+  "http://ebay.com",
+  "http://onliner.by",
 ];
-class Aside {
-  constructor(name, href) {
-    this.name = name;
-    this.href = href;
-  }
-  funcAside() {
-    let a = document.createElement("a");
-    a.href = this.href;
-    a.innerText = this.name;
-    let li = document.createElement("li");
-    li.appendChild(a);
-    ul.appendChild(li);
-    return ul;
-  }
+
+let ul = document.createElement("ul");
+ul.className = "header_item";
+for (i = 0; i <= arr.length - 1; i++) {
+  let li = document.createElement("li");
+  let a = document.createElement("a");
+  a.innerText = arr[i];
+  a.href = arrHref[i];
+  li.className = "header_item_li";
+  li.appendChild(a);
+  ul.appendChild(li);
 }
-asideArray.forEach((item) => {
-  item = new Aside(item.name, item.href);
-  ul = item.funcAside();
-});
-nav.append(ul);
-aside.append(nav);
-document.body.append(aside);
+nav.appendChild(ul);
+header.appendChild(nav);
