@@ -1,12 +1,11 @@
-const obj = {
-  name: "Ivan",
-};
 let form = document.getElementById("form");
 let span = document.getElementById("span");
 let log = document.getElementById("login");
 let pass = document.getElementById("password");
 let submit = document.getElementById("submit");
 let button = document.getElementById("button");
+let alphabet = "qwertyuiopasdfghjklzxcvbnm";
+let numbers = "123456789";
 form.style.display = "none";
 span.style.display = "none";
 if (
@@ -16,24 +15,26 @@ if (
   form.style.display = "block";
   log.value = JSON.parse(localStorage.getItem("login"));
   pass.value = JSON.parse(localStorage.getItem("password"));
-  let alphabet = "йцукенгшщзхъёфывапролджэячсмитьбю";
-  let numbers = "123456789";
   submit.addEventListener("click", () => {
     if (log.value.length > 4) {
       localStorage.setItem("login", JSON.stringify(log.value));
     } else {
       alert("Login dolzhen byt bolshe 4 simvolov");
     }
-    arr = Array.from(pass.value.toLowerCase());
-    smth = arr.forEach((element) => {
-      w = alphabet.search(element);
-      return w;
+    let numSum = 0;
+    let letSum = 0;
+    let arrPass = Array.from(pass.value.toLowerCase());
+    arrPass.forEach((element) => {
+      if (alphabet.search(element) !== -1) {
+        letSum++;
+      }
     });
-    smth2 = arr.forEach((element) => {
-      z = numbers.search(element);
-      return z;
+    arrPass.forEach((element) => {
+      if (numbers.search(element) !== -1) {
+        numSum++;
+      }
     });
-    if (pass.value.length > 4 && smth != -1 && smth2 != -1) {
+    if (pass.value.length > 4 && letSum !== 0 && numSum !== 0) {
       localStorage.setItem("password", JSON.stringify(pass.value));
     } else {
       alert("Parol dolzhen byt bolshe 4 simvolov i soderzhat bukvy i cyfry");
